@@ -1,0 +1,77 @@
+﻿@model ReWebApplication.Models.Book
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+        <img src="/@Html.DisplayFor(model => model.Cover)" alt="thumbnail" />
+    </div>
+
+    <div class="caption">
+        <p>@Html.DisplayNameFor(model => model.Author): @Html.DisplayNameFor(model => model.Author)</p>
+        <p>@Html.DisplayNameFor(model => model.PublicYear): @Html.DisplayNameFor(model => model.PublicYear)</p>
+        <p>@Html.DisplayNameFor(model => model.Price): @Html.DisplayNameFor(model => model.Price)</p>
+        <p>
+            <a href="#" class="btn btn-primary" role="button">
+                Buy
+            </a>
+             @Html.ActionLink("Back", "ListBooks","", new { @class = "btn btn-info" })      
+        </p>
+    </div>
+</div>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cover)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
